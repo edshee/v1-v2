@@ -1,0 +1,20 @@
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: cifar10
+  namespace: seldon
+spec:
+  annotations:
+    seldon.io/engine-seldon-log-messages-externally: "true"
+  name: cifar10
+  predictors:
+    - graph:
+        implementation: TRITON_SERVER
+        logger:
+          mode: all
+        modelUri: gs://seldon-models/triton/onnx_cifar10
+        name: cifar10
+        type: MODEL
+      name: default
+      replicas: 1
+  protocol: v2

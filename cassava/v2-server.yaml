@@ -1,0 +1,13 @@
+apiVersion: mlops.seldon.io/v1alpha1
+kind: Server
+metadata:
+  name: tfhub-mlserver
+  namespace: seldon-mesh
+spec:
+  serverConfig: mlserver
+  capabilities:
+    - tfhub
+  podSpec:
+    containers:
+      - image: edshee/tfhub
+        name: mlserver

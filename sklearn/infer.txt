@@ -1,0 +1,1 @@
+seldon model infer iris-model   '{"inputs": [{"name": "predict", "shape": [1, 4], "datatype": "FP32", "data": [[1, 2, 3, 4]]}]}' | jq

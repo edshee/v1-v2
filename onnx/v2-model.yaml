@@ -1,0 +1,8 @@
+apiVersion: mlops.seldon.io/v1alpha1
+kind: Model
+metadata:
+  name: cifar10
+spec:
+  storageUri: "gs://seldon-models/triton/onnx_cifar10"
+  requirements:
+    - onnx

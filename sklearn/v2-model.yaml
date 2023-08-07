@@ -1,0 +1,9 @@
+apiVersion: mlops.seldon.io/v1alpha1
+kind: Model
+metadata:
+  name: iris-model
+spec:
+  storageUri: "gs://seldon-models/v1.17.0-dev/sklearn/iris"
+  requirements:
+    - sklearn
+  replicas: 1
