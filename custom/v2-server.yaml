@@ -1,0 +1,13 @@
+apiVersion: mlops.seldon.io/v1alpha1
+kind: Server
+metadata:
+  name: mlserver-pyjokes
+  namespace: seldon-mesh
+spec:
+  serverConfig: mlserver
+  capabilities:
+    - pyjokes
+  podSpec:
+    containers:
+      - image: edshee/pyjokes
+        name: mlserver
